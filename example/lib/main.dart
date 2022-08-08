@@ -13,19 +13,7 @@ class OpenPdfPage extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: SafeArea(
             child: Scaffold(
-          body: Center(
-            child: FutureBuilder<Widget>(
-                future: _openPdf.openAssets(path: 'assets/test.pdf'),
-                builder: (context, snap) {
-                  if (snap.connectionState == ConnectionState.waiting) {
-                    return const CircularProgressIndicator(
-                      color: Colors.orange,
-                    );
-                  } else {
-                    return snap.data ?? Container();
-                  }
-                }),
-          ),
+          body: Center(child: _openPdf.openAssets(path: "path")),
         )));
   }
 }
